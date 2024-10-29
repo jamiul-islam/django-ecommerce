@@ -16,9 +16,10 @@ class Collection(models.Model):
 # product model many to many relationship with promotion
 class Product(models.Model):
     sku = models.CharField(max_length=10, primary_key=True)
+    slug = models.SlugField()
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
     last_updated = models.DateTimeField(auto_now=True)
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
