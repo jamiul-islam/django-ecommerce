@@ -6,11 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-debug-toolbar = "*"
-autopep8 = "*"
-pylint = "*"
-pylint-django = "*"
-python-decouple = "*"
 mysqlclient = "*"
+python-decouple = "*"
 
 [dev-packages]
 
