@@ -8,13 +8,14 @@ from store.models import Product
 from tags.models import TaggedItem
 from django.db import transaction
 
+
 def say_hello(request):
     # try:
     #     product = Product.objects.get(pk=0)
     # except ObjectDoesNotExist:
     #     pass
-    
-    query_set = Product.objects.filter(Q(inventory__lt=10) | Q(unit_price__lt=20))
+
+    # query_set = Product.objects.filter(Q(inventory__lt=10) | Q(unit_price__lt=20))
     # query_set = Product.objects.filter(inventory = F('unit_price'))
     # query_set = Product.objects.only('id', 'title')
     # query_set = Product.objects.defer('description')
@@ -39,6 +40,5 @@ def say_hello(request):
     #     item.quantity = 1
     #     item.unit_price = 10
     #     item.save()
-    
 
     return render(request, 'hello.html', {'name': 'Jami', 'product': list(query_set)})
